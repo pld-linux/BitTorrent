@@ -12,7 +12,6 @@ Source0:	http://bitconjurer.org/BitTorrent/%{name}-%{version}.zip
 URL:		http://bitconjurer.org/BitTorrent/
 BuildRequires:	python-devel
 BuildRequires:	rpm-pythonprov 
-BuildRequires:	perl-base
 BuildRequires:	unzip
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -52,7 +51,8 @@ Bazuj±cy na wxWindows graficzny interfejs u¿ytkownika dla BitTorrenta.
 %setup -q
 
 %build
-find -type f | xargs %{__perl} -pi -e 's/python2/python/g'
+find -type f -exec sed -i -e 's|#!.*python.*|#!%{_bindir}/python|g' "{}" ";"
+
 
 %install
 rm -rf $RPM_BUILD_ROOT
