@@ -3,7 +3,8 @@ Summary(pl):	BitTorrent - narzêdzie do rozpowszechniania plików
 Name:		BitTorrent
 Version:	4.0.0
 Release:	0.1
-License:	MIT
+#license fix ?
+License:	MIT / BitTorrent Open Source License
 Group:		Applications/Communications
 Source0:	http://www.bittorrent.com/dl/%{name}-%{version}.tar.gz
 # Source0-md5:	67f449df351b66f408b72b6bd196952f
