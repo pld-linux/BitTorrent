@@ -3,7 +3,7 @@ Summary:	BitTorrent - a tool for distributing files
 Summary(pl):	BitTorrent - narzêdzie do rozpowszechniania plików
 Name:		BitTorrent
 Version:	3.3
-Release:	2
+Release:	3
 License:	MIT
 Group:		Applications/Communications
 #Source0Download:	http://bitconjurer.org/BitTorrent/download.html
@@ -35,7 +35,7 @@ mo¿liwo¶ci ¶ci±gania.
 Summary:	GUI for BitTorrent
 Summary:	Graficzny interfejs u¿ytkownika dla BitTorrenta
 Group:		X11/Applications
-Requires:	BitTorrent = %{name}-%{version}
+Requires:	%{name} = %{version}-%{release}
 Requires:	python-wxPython
 
 %description gui
