@@ -3,7 +3,7 @@ Summary:	BitTorrent - a tool for distributing files
 Summary(pl):	BitTorrent - narzêdzie do rozpowszechniania plików
 Name:		BitTorrent
 Version:	3.4.1a
-Release:	1
+Release:	2
 License:	MIT
 Group:		Applications/Communications
 #Source0Download:	http://bitconjurer.org/BitTorrent/download.html
@@ -58,7 +58,8 @@ find -type f -exec sed -i -e 's|#!.*python.*|#!%{_bindir}/python|g' "{}" ";"
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT
 
-python ./setup.py install --prefix=$RPM_BUILD_ROOT%{_prefix}
+python ./setup.py install --optimize=2 --root=$RPM_BUILD_ROOT
+find $RPM_BUILD_ROOT%{py_sitescriptdir} -type f -name "*.py" | xargs rm
 
 %clean
 rm -rf $RPM_BUILD_ROOT
