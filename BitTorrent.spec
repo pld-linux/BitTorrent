@@ -2,12 +2,13 @@ Summary:	BitTorrent - a tool for distributing files
 Summary(pl):	BitTorrent - narzêdzie do rozpowszechniania plików
 Name:		BitTorrent
 Version:	3.4.2
-Release:	3
+Release:	4
 License:	MIT
 Group:		Applications/Communications
 #Source0Download:	http://bitconjurer.org/BitTorrent/download.html
 Source0:	http://dl.sourceforge.net/bittorrent/%{name}-%{version}.zip
 # Source0-md5:	6ad4e128ddc82f8ebef6fbef59872f0d
+Patch0:		%{name}-man_pages.patch
 URL:		http://bitconjurer.org/BitTorrent/
 BuildRequires:	python-devel
 BuildRequires:	rpm-pythonprov 
@@ -51,16 +52,18 @@ Bazuj±cy na wxWindows graficzny interfejs u¿ytkownika dla BitTorrenta.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 find -type f -exec sed -i -e 's|#!.*python.*|#!%{_bindir}/python|g' "{}" ";"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_mandir}/man1
 
 python ./setup.py install --optimize=2 --root=$RPM_BUILD_ROOT
 find $RPM_BUILD_ROOT%{py_sitescriptdir} -type f -name "*.py" | xargs rm
+install debian/* $RPM_BUILD_ROOT%{_mandir}/man1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -78,6 +81,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/btt*.py
 %attr(755,root,root) %{_bindir}/btshowmetainfo.py
 %{py_sitescriptdir}/BitTorrent
+%{_mandir}/man1/*
 
 %files gui
 %defattr(644,root,root,755)
