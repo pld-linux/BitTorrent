@@ -8,6 +8,7 @@ License:	MIT
 Group:		Applications/Communications
 #Source0Download:	http://bitconjurer.org/BitTorrent/download.html
 Source0:	http://bitconjurer.org/BitTorrent/%{name}-%{version}.tar.gz
+# Source0-md5:	94842dd09e435ee1a1a504857568b782
 URL:		http://bitconjurer.org/BitTorrent/
 Requires:	python-wxPython
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
