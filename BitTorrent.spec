@@ -14,6 +14,7 @@ BuildRequires:	python-devel
 BuildRequires:	rpm-pythonprov 
 BuildRequires:	sed >= 4.0
 BuildRequires:	unzip
+Requires:	python-modules
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
