@@ -1,4 +1,3 @@
-%include	/usr/lib/rpm/macros.python
 Summary:	BitTorrent - a tool for distributing files
 Summary(pl):	BitTorrent - narzêdzie do rozpowszechniania plików
 Name:		BitTorrent
