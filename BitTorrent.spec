@@ -3,14 +3,17 @@ Summary:	BitTorrent - a tool for distributing files
 Summary(pl):	BitTorrent - narzêdzie do rozpowszechniania plików
 Name:		BitTorrent
 Version:	3.3
-Release:	3
+Release:	4
 License:	MIT
 Group:		Applications/Communications
 #Source0Download:	http://bitconjurer.org/BitTorrent/download.html
 Source0:	http://bitconjurer.org/BitTorrent/%{name}-%{version}.tar.gz
 # Source0-md5:	1ecf1fc40b4972470313f9ae728206e8
 URL:		http://bitconjurer.org/BitTorrent/
-BuildRequires:  python-devel
+BuildRequires:	python-devel
+BuildRequires:	rpm-pythonprov 
+BuildRequires:	perl-base
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -48,7 +51,7 @@ Bazuj±cy na wxWindows graficzny interfejs u¿ytkownika dla BitTorrenta.
 %setup -q
 
 %build
-find -type f | xargs perl -pi -e 's/python2/python/g'
+find -type f | xargs %{__perl} -pi -e 's/python2/python/g'
 
 %install
 rm -rf $RPM_BUILD_ROOT
