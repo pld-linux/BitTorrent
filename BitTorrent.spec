@@ -1,16 +1,14 @@
 Summary:	BitTorrent - a tool for distributing files
 Summary(pl):	BitTorrent - narzêdzie do rozpowszechniania plików
 Name:		BitTorrent
-Version:	3.4.2
-Release:	6
+Version:	4.0.0
+Release:	0.1
 License:	MIT
 Group:		Applications/Communications
-#Source0Download:	http://bitconjurer.org/BitTorrent/download.html
-Source0:	http://dl.sourceforge.net/bittorrent/%{name}-%{version}.zip
-# Source0-md5:	6ad4e128ddc82f8ebef6fbef59872f0d
+Source0:	http://www.bittorrent.com/dl/%{name}-%{version}.tar.gz
+# Source0-md5:	67f449df351b66f408b72b6bd196952f
 Patch0:		%{name}-man_pages.patch
-Patch1:		%{name}-python24.patch
-URL:		http://bitconjurer.org/BitTorrent/
+URL:		http://www.bittorrent.com/
 BuildRequires:	python-devel
 BuildRequires:	rpm-pythonprov 
 BuildRequires:	sed >= 4.0
@@ -44,6 +42,7 @@ Summary:	Graficzny interfejs u¿ytkownika dla BitTorrenta
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 Requires:	python-wxPython
+Obsoletes:	BitTornado-gui
 
 %description gui
 wxWindows based GUI for BitTorrent.
@@ -54,7 +53,6 @@ Bazuj±cy na wxWindows graficzny interfejs u¿ytkownika dla BitTorrenta.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
 
 %build
 find -type f -exec sed -i -e 's|#!.*python.*|#!%{_bindir}/python|g' "{}" ";"
@@ -72,13 +70,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc INSTALL.unix.txt LICENSE.txt README.txt credits.txt 
-%attr(755,root,root) %{_bindir}/btcompletedir.py
+%doc LICENSE.txt README.txt credits.txt 
 %attr(755,root,root) %{_bindir}/btdownloadcurses.py
 %attr(755,root,root) %{_bindir}/btdownloadheadless.py
-%attr(644,root,root) %{_bindir}/btdownloadlibrary.py
 %attr(755,root,root) %{_bindir}/btlaunchmany*.py
-%attr(755,root,root) %{_bindir}/btmakemetafile.py
+%attr(755,root,root) %{_bindir}/btmaketorrent.py
 %attr(755,root,root) %{_bindir}/btr*.py
 %attr(755,root,root) %{_bindir}/btt*.py
 %attr(755,root,root) %{_bindir}/btshowmetainfo.py
@@ -88,4 +84,4 @@ rm -rf $RPM_BUILD_ROOT
 %files gui
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/btdownloadgui.py
-%attr(755,root,root) %{_bindir}/btcompletedirgui.py
+%attr(755,root,root) %{_bindir}/btmaketorrentgui.py
