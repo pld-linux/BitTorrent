@@ -15,7 +15,7 @@ BuildRequires:	python-devel
 BuildRequires:	rpm-pythonprov 
 BuildRequires:	sed >= 4.0
 BuildRequires:	unzip
-Requires:	python-modules
+%pyrequires_eq:	python-modules
 Obsoletes:	BitTornado
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
