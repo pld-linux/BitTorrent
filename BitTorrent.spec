@@ -11,7 +11,6 @@ Patch0:		%{name}-man_pages.patch
 URL:		http://www.bittorrent.com/
 BuildRequires:	python-devel
 BuildRequires:	sed >= 4.0
-BuildRequires:	unzip
 %pyrequires_eq	python-modules
 Obsoletes:	BitTornado
 BuildArch:	noarch
