@@ -74,5 +74,6 @@ rm -rf $RPM_BUILD_ROOT
 %{py_sitedir}/BitTorrent
 
 %files gui
+%defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/btdownloadgui.py
 %attr(755,root,root) %{_bindir}/btcompletedirgui.py
