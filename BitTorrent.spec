@@ -2,9 +2,8 @@ Summary:	BitTorrent - a tool for distributing files
 Summary(pl):	BitTorrent - narzêdzie do rozpowszechniania plików
 Name:		BitTorrent
 Version:	4.0.0
-Release:	0.1
-#license fix ?
-License:	MIT / BitTorrent Open Source License
+Release:	1
+License:	BitTorrent Open Source License
 Group:		Applications/Communications
 Source0:	http://www.bittorrent.com/dl/%{name}-%{version}.tar.gz
 # Source0-md5:	67f449df351b66f408b72b6bd196952f
@@ -42,14 +41,14 @@ Summary:	GUI for BitTorrent
 Summary:	Graficzny interfejs u¿ytkownika dla BitTorrenta
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
-Requires:	python-wxPython
+Requires:	python-pygtk-gtk >= 2.4.0
 Obsoletes:	BitTornado-gui
 
 %description gui
-wxWindows based GUI for BitTorrent.
+GUI for BitTorrent.
 
 %description gui -l pl
-Bazuj±cy na wxWindows graficzny interfejs u¿ytkownika dla BitTorrenta.
+Graficzny interfejs u¿ytkownika dla BitTorrenta.
 
 %prep
 %setup -q
@@ -86,3 +85,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/btdownloadgui.py
 %attr(755,root,root) %{_bindir}/btmaketorrentgui.py
+%{_pixmapsdir}/BitTorrent-%{version}
