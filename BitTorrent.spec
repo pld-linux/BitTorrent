@@ -11,6 +11,7 @@ Source0:	http://bitconjurer.org/BitTorrent/%{name}-%{version}.tar.gz
 # Source0-md5:	1ecf1fc40b4972470313f9ae728206e8
 URL:		http://bitconjurer.org/BitTorrent/
 Requires:	python-wxPython
+BuildRequires:  python-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
