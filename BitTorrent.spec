@@ -2,13 +2,13 @@
 Summary:	BitTorrent - a tool for distributing files
 Summary(pl):	BitTorrent - narzêdzie do rozpowszechniania plików
 Name:		BitTorrent
-Version:	3.4.1a
-Release:	2
+Version:	3.4.2
+Release:	1
 License:	MIT
 Group:		Applications/Communications
 #Source0Download:	http://bitconjurer.org/BitTorrent/download.html
 Source0:	http://dl.sourceforge.net/bittorrent/%{name}-%{version}.zip
-# Source0-md5:	84d8cfedeba539db8b497d63e6ecceed
+# Source0-md5:	6ad4e128ddc82f8ebef6fbef59872f0d
 URL:		http://bitconjurer.org/BitTorrent/
 BuildRequires:	python-devel
 BuildRequires:	rpm-pythonprov 
