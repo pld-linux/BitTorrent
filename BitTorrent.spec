@@ -12,6 +12,7 @@ Source0:	http://dl.sourceforge.net/bittorrent/%{name}-%{version}.zip
 URL:		http://bitconjurer.org/BitTorrent/
 BuildRequires:	python-devel
 BuildRequires:	rpm-pythonprov 
+BuildRequires:	sed >= 4.0
 BuildRequires:	unzip
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
