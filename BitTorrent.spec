@@ -6,7 +6,8 @@ Version:	3.1
 Release:	0.1
 License:	MIT
 Group:		Applications/Communications
-Source0:	%{name}-%{version}.tar.gz
+#Source0Download:	http://bitconjurer.org/BitTorrent/download.html
+Source0:	http://bitconjurer.org/BitTorrent/%{name}-%{version}.tar.gz
 URL:		http://bitconjurer.org/BitTorrent/
 Requires:	python-wxPython
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
