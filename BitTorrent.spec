@@ -2,13 +2,13 @@
 Summary:	BitTorrent - a tool for distributing files
 Summary(pl):	BitTorrent - narzêdzie do rozpowszechniania plików
 Name:		BitTorrent
-Version:	3.1
-Release:	0.1
+Version:	3.2.1b
+Release:	1
 License:	MIT
 Group:		Applications/Communications
 #Source0Download:	http://bitconjurer.org/BitTorrent/download.html
 Source0:	http://bitconjurer.org/BitTorrent/%{name}-%{version}.tar.gz
-# Source0-md5:	94842dd09e435ee1a1a504857568b782
+# Source0-md5:	9e0cc346a4bfa3904380ed119d8bac90
 URL:		http://bitconjurer.org/BitTorrent/
 Requires:	python-wxPython
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -50,10 +50,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc FAQ.txt INSTALL.unix.txt LICENSE.txt README.txt credits.txt todo.txt
-%attr(755,root,root) %{_bindir}/btdownloadgui.py
-%attr(755,root,root) %{_bindir}/btdownloadheadless.py
-%attr(755,root,root) %{_bindir}/btdownloadprefetched.py
-%attr(755,root,root) %{_bindir}/btmakemetafile.py
-%attr(755,root,root) %{_bindir}/bttrack.py
-%{_bindir}/btdownloadlibrary.py
+%attr(755,root,root) %{_bindir}/*
 %{py_sitedir}/BitTorrent
