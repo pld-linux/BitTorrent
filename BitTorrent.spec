@@ -10,7 +10,6 @@ Source0:	http://www.bittorrent.com/dl/%{name}-%{version}.tar.gz
 Patch0:		%{name}-man_pages.patch
 URL:		http://www.bittorrent.com/
 BuildRequires:	python-devel
-BuildRequires:	rpm-pythonprov 
 BuildRequires:	sed >= 4.0
 BuildRequires:	unzip
 %pyrequires_eq	python-modules
