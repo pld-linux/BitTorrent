@@ -2,17 +2,18 @@
 Summary:	BitTorrent - a tool for distributing files
 Summary(pl):	BitTorrent - narzêdzie do rozpowszechniania plików
 Name:		BitTorrent
-Version:	3.3
-Release:	4
+Version:	3.4
+Release:	1
 License:	MIT
 Group:		Applications/Communications
 #Source0Download:	http://bitconjurer.org/BitTorrent/download.html
-Source0:	http://bitconjurer.org/BitTorrent/%{name}-%{version}.tar.gz
-# Source0-md5:	1ecf1fc40b4972470313f9ae728206e8
+Source0:	http://bitconjurer.org/BitTorrent/%{name}-%{version}.zip
+# Source0-md5:	e09c7655132522d5dec6e5685d572ed1
 URL:		http://bitconjurer.org/BitTorrent/
 BuildRequires:	python-devel
 BuildRequires:	rpm-pythonprov 
 BuildRequires:	perl-base
+BuildRequires:	unzip
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -57,7 +58,7 @@ find -type f | xargs %{__perl} -pi -e 's/python2/python/g'
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT
 
-./setup.py install --prefix=$RPM_BUILD_ROOT%{_prefix}
+python ./setup.py install --prefix=$RPM_BUILD_ROOT%{_prefix}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -74,7 +75,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/btr*.py
 %attr(755,root,root) %{_bindir}/btt*.py
 %attr(755,root,root) %{_bindir}/btshowmetainfo.py
-%{py_sitedir}/BitTorrent
+%{py_sitescriptdir}/BitTorrent
 
 %files gui
 %defattr(644,root,root,755)
