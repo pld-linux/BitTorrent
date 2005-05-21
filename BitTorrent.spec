@@ -8,6 +8,7 @@ Group:		Applications/Communications
 Source0:	http://www.bittorrent.com/dl/%{name}-%{version}.tar.gz
 # Source0-md5:	49b0dac6f9b3aedcb75302c049c5bba6
 Patch0:		%{name}-man_pages.patch
+Patch1:		%{name}-typos.patch
 URL:		http://www.bittorrent.com/
 BuildRequires:	python-devel
 BuildRequires:	sed >= 4.0
@@ -51,6 +52,7 @@ Graficzny interfejs u¿ytkownika dla BitTorrenta.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 find -type f -exec sed -i -e 's|#!.*python.*|#!%{_bindir}/python|g' "{}" ";"
