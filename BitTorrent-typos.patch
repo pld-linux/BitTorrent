@@ -1,0 +1,26 @@
+diff -urN BitTorrent-4.1.0.org/btdownloadcurses.py BitTorrent-4.1.0/btdownloadcurses.py
+--- BitTorrent-4.1.0.org/btdownloadcurses.py	2005-05-16 04:47:18.000000000 +0200
++++ BitTorrent-4.1.0/btdownloadcurses.py	2005-05-21 19:47:38.726056280 +0200
+@@ -333,7 +333,7 @@
+             if config['save_as']:
+                 if config['save_in']:
+                     raise BTFailure(_("You cannot specify both --save_as and "
+-                                      "--save_in")
++                                      "--save_in"))
+                 saveas = config['save_as']
+             elif config['save_in']:
+                 saveas = os.path.join(config['save_in'], torrent_name)
+diff -urN BitTorrent-4.1.0.org/btdownloadheadless.py BitTorrent-4.1.0/btdownloadheadless.py
+--- BitTorrent-4.1.0.org/btdownloadheadless.py	2005-05-16 04:47:19.000000000 +0200
++++ BitTorrent-4.1.0/btdownloadheadless.py	2005-05-21 19:49:26.439681320 +0200
+@@ -134,8 +134,8 @@
+             nextCopies = ', '.join(["%d:%.1f%%" % (a,int(b*1000)/10) for a,b in
+                     zip(xrange(numCopies+1, 1000), statistics['numCopyList'])])
+             if not self.done:
+-                self.seedStatus = _("%d seen now, plus %d distributed copies ") \
+-                                  '(%s)' % (statistics['numSeeds'],
++                self.seedStatus = _("%d seen now, plus %d distributed copies (%s)") \
++                                  % (statistics['numSeeds'],
+                                          statistics['numCopies'], nextCopies)
+             else:
+                 self.seedStatus = _("%d distributed copies (next: %s)") % (
