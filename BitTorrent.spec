@@ -1,14 +1,13 @@
 Summary:	BitTorrent - a tool for distributing files
 Summary(pl):	BitTorrent - narzêdzie do rozpowszechniania plików
 Name:		BitTorrent
-Version:	4.1.0
-Release:	1.1
+Version:	4.1.1
+Release:	1
 License:	BitTorrent Open Source License
 Group:		Applications/Communications
 Source0:	http://www.bittorrent.com/dl/%{name}-%{version}.tar.gz
-# Source0-md5:	49b0dac6f9b3aedcb75302c049c5bba6
+# Source0-md5:	57381176882184ad8f539c473ad9bce5
 Patch0:		%{name}-man_pages.patch
-Patch1:		%{name}-typos.patch
 URL:		http://www.bittorrent.com/
 BuildRequires:	python-devel
 BuildRequires:	sed >= 4.0
@@ -52,7 +51,6 @@ Graficzny interfejs u¿ytkownika dla BitTorrenta.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
 
 %build
 find -type f -exec sed -i -e 's|#!.*python.*|#!%{_bindir}/python|g' "{}" ";"
