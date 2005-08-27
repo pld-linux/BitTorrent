@@ -1,12 +1,12 @@
 Summary:	BitTorrent - a tool for distributing files
 Summary(pl):	BitTorrent - narzêdzie do rozpowszechniania plików
 Name:		BitTorrent
-Version:	4.1.3
+Version:	4.1.4
 Release:	1
 License:	BitTorrent Open Source License
 Group:		Applications/Communications
 Source0:	http://www.bittorrent.com/dl/%{name}-%{version}.tar.gz
-# Source0-md5:	cd4dff145b5dea3789fa384bb94a4de9
+# Source0-md5:	1d0f85eb5cd4ac219853e2e6709f5847
 Patch0:		%{name}-man_pages.patch
 URL:		http://www.bittorrent.com/
 BuildRequires:	python-devel
@@ -63,25 +63,28 @@ python ./setup.py install --optimize=2 --root=$RPM_BUILD_ROOT
 find $RPM_BUILD_ROOT%{py_sitescriptdir} -type f -name "*.py" | xargs rm
 install debian/* $RPM_BUILD_ROOT%{_mandir}/man1
 
+%find_lang bittorrent
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f bittorrent.lang
 %defattr(644,root,root,755)
 %doc LICENSE.txt README.txt credits.txt 
-%attr(755,root,root) %{_bindir}/btdownloadcurses.py
-%attr(755,root,root) %{_bindir}/btdownloadheadless.py
-%attr(755,root,root) %{_bindir}/btlaunchmany*.py
-%attr(755,root,root) %{_bindir}/btmaketorrent.py
-%attr(755,root,root) %{_bindir}/btr*.py
-%attr(755,root,root) %{_bindir}/btt*.py
-%attr(755,root,root) %{_bindir}/btshowmetainfo.py
+%attr(755,root,root) %{_bindir}/bittorrent-console
+%attr(755,root,root) %{_bindir}/bittorrent-curses
+%attr(755,root,root) %{_bindir}/bittorrent-tracker
+%attr(755,root,root) %{_bindir}/changetracker-console
+%attr(755,root,root) %{_bindir}/launchmany-console
+%attr(755,root,root) %{_bindir}/launchmany-curses
+%attr(755,root,root) %{_bindir}/maketorrent-console
+%attr(755,root,root) %{_bindir}/torrentinfo-console
 %{py_sitescriptdir}/BitTorrent
 %{py_sitescriptdir}/khashmir
 %{_mandir}/man1/*
 
 %files gui
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/btdownloadgui.py
-%attr(755,root,root) %{_bindir}/btmaketorrentgui.py
+%attr(755,root,root) %{_bindir}/bittorrent
+%attr(755,root,root) %{_bindir}/maketorrent
 %{_pixmapsdir}/BitTorrent-%{version}
