@@ -2,7 +2,7 @@ Summary:	BitTorrent - a tool for distributing files
 Summary(pl):	BitTorrent - narzêdzie do rozpowszechniania plików
 Name:		BitTorrent
 Version:	4.1.6
-Release:	1
+Release:	2
 License:	BitTorrent Open Source License
 Group:		Applications/Communications
 Source0:	http://www.bittorrent.com/dl/%{name}-%{version}.tar.gz
@@ -13,6 +13,7 @@ BuildRequires:	python-devel
 BuildRequires:	sed >= 4.0
 %pyrequires_eq	python-modules
 Obsoletes:	BitTornado
+Requires:	python-Crypto
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
