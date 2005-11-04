@@ -1,12 +1,12 @@
 Summary:	BitTorrent - a tool for distributing files
 Summary(pl):	BitTorrent - narzêdzie do rozpowszechniania plików
 Name:		BitTorrent
-Version:	4.1.6
-Release:	3
+Version:	4.1.7
+Release:	1
 License:	BitTorrent Open Source License
 Group:		Applications/Communications
 Source0:	http://www.bittorrent.com/dl/%{name}-%{version}.tar.gz
-# Source0-md5:	ba371b39ee6bce98775e6c346d5e8b58
+# Source0-md5:	b1912428950d1875ae674d324a302191
 Patch0:		%{name}-man_pages.patch
 URL:		http://www.bittorrent.com/
 BuildRequires:	python-devel
@@ -65,7 +65,6 @@ find $RPM_BUILD_ROOT%{py_sitescriptdir} -type f -name "*.py" | xargs rm
 install debian/* $RPM_BUILD_ROOT%{_mandir}/man1
 
 mv -f $RPM_BUILD_ROOT%{_datadir}/locale/{gr,el}
-mv -f $RPM_BUILD_ROOT%{_datadir}/locale/he{_IL,}
 mv -f $RPM_BUILD_ROOT%{_datadir}/locale/nb{_NO,}
 
 %find_lang bittorrent
