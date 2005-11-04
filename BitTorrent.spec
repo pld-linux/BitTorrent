@@ -8,6 +8,7 @@ Group:		Applications/Communications
 Source0:	http://www.bittorrent.com/dl/%{name}-%{version}.tar.gz
 # Source0-md5:	b1912428950d1875ae674d324a302191
 Patch0:		%{name}-man_pages.patch
+Patch1:		%{name}-morei18n.patch
 URL:		http://www.bittorrent.com/
 BuildRequires:	python-devel
 BuildRequires:	sed >= 4.0
@@ -52,9 +53,17 @@ Graficzny interfejs u¿ytkownika dla BitTorrenta.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
+
+mv -f po/{gr,el}.po
+mv -f po/he{_IL,}.po
+mv -f po/nb{_NO,}.po
 
 %build
 find -type f -exec sed -i -e 's|#!.*python.*|#!%{_bindir}/python|g' "{}" ";"
+
+#rm -rf locale
+#. ./makei18n.sh
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -63,9 +72,6 @@ install -d $RPM_BUILD_ROOT%{_mandir}/man1
 python ./setup.py install --optimize=2 --root=$RPM_BUILD_ROOT
 find $RPM_BUILD_ROOT%{py_sitescriptdir} -type f -name "*.py" | xargs rm
 install debian/* $RPM_BUILD_ROOT%{_mandir}/man1
-
-mv -f $RPM_BUILD_ROOT%{_datadir}/locale/{gr,el}
-mv -f $RPM_BUILD_ROOT%{_datadir}/locale/nb{_NO,}
 
 %find_lang bittorrent
 
