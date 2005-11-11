@@ -11,6 +11,7 @@ Patch0:		%{name}-man_pages.patch
 Patch1:		%{name}-morei18n.patch
 URL:		http://www.bittorrent.com/
 BuildRequires:	python-devel
+BuildRequires:	rpm-pythonprov
 BuildRequires:	sed >= 4.0
 %pyrequires_eq	python-modules
 Obsoletes:	BitTornado
