@@ -57,12 +57,11 @@ Graficzny interfejs u¿ytkownika dla BitTorrenta.
 mv -f po/{gr,el}.po
 mv -f po/he{_IL,}.po
 mv -f po/nb{_NO,}.po
+rm -rf locale
+sed -i -e "s/'nb_NO'/'nb'   /;s/'gr'/'el'/;s/'he_IL'/'he'   /" BitTorrent/__init__.py
 
 %build
 find -type f -exec sed -i -e 's|#!.*python.*|#!%{_bindir}/python|g' "{}" ";"
-
-#rm -rf locale
-#. ./makei18n.sh
 
 %install
 rm -rf $RPM_BUILD_ROOT
