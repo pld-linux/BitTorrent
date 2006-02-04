@@ -1,12 +1,12 @@
 Summary:	BitTorrent - a tool for distributing files
 Summary(pl):	BitTorrent - narzêdzie do rozpowszechniania plików
 Name:		BitTorrent
-Version:	4.2.2
+Version:	4.4.0
 Release:	1
 License:	BitTorrent Open Source License
 Group:		Applications/Communications
 Source0:	http://www.bittorrent.com/dl/%{name}-%{version}.tar.gz
-# Source0-md5:	2a85715b8ef0335ecc9e8ad91860231b
+# Source0-md5:	74d4b48202c28f0b27e989b6d5f5b214
 Patch0:		%{name}-man_pages.patch
 Patch1:		%{name}-morei18n.patch
 URL:		http://www.bittorrent.com/
@@ -54,8 +54,6 @@ Graficzny interfejs u¿ytkownika dla BitTorrenta.
 %patch0 -p1
 %patch1 -p1
 
-mv -f po/{gr,el}.po
-mv -f po/he{_IL,}.po
 mv -f po/nb{_NO,}.po
 rm -rf locale
 sed -i -e "s/'nb_NO'/'nb'   /;s/'gr'/'el'/;s/'he_IL'/'he'   /" BitTorrent/__init__.py
