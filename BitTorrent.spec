@@ -1,8 +1,11 @@
+#
+%define		_noautocompressdoc	credits*
+#
 Summary:	BitTorrent - a tool for distributing files
 Summary(pl):	BitTorrent - narzêdzie do rozpowszechniania plików
 Name:		BitTorrent
 Version:	4.4.0
-Release:	1
+Release:	2
 License:	BitTorrent Open Source License
 Group:		Applications/Communications
 Source0:	http://www.bittorrent.com/dl/%{name}-%{version}.tar.gz
@@ -76,7 +79,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f bittorrent.lang
 %defattr(644,root,root,755)
-%doc LICENSE.txt README.txt credits.txt 
+%doc LICENSE.txt README.txt credits.txt credits-l10n.txt
 %attr(755,root,root) %{_bindir}/bittorrent-console
 %attr(755,root,root) %{_bindir}/bittorrent-curses
 %attr(755,root,root) %{_bindir}/bittorrent-tracker
@@ -93,4 +96,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/bittorrent
 %attr(755,root,root) %{_bindir}/maketorrent
-%{_pixmapsdir}/BitTorrent-%{version}
+%{_pixmapsdir}/%{name}-%{version}
