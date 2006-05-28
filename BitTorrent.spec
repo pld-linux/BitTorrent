@@ -1,12 +1,12 @@
 Summary:	BitTorrent - a tool for distributing files
 Summary(pl):	BitTorrent - narzêdzie do rozpowszechniania plików
 Name:		BitTorrent
-Version:	4.4.0
+Version:	4.9.6
 Release:	1
 License:	BitTorrent Open Source License
 Group:		Applications/Communications
 Source0:	http://www.bittorrent.com/dl/%{name}-%{version}.tar.gz
-# Source0-md5:	74d4b48202c28f0b27e989b6d5f5b214
+# Source0-md5:	c024bf57d38f3a350897717a593098f8
 Patch0:		%{name}-man_pages.patch
 Patch1:		%{name}-morei18n.patch
 URL:		http://www.bittorrent.com/
@@ -15,6 +15,8 @@ BuildRequires:	rpm-pythonprov
 BuildRequires:	sed >= 4.0
 %pyrequires_eq	python-modules
 Requires:	python-Crypto
+Requires:	python-Twisted
+Requires:	python-TwistedWeb
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -61,13 +63,22 @@ sed -i -e "s/'nb_NO'/'nb'   /;s/'gr'/'el'/;s/'he_IL'/'he'   /" BitTorrent/__init
 %build
 find -type f -exec sed -i -e 's|#!.*python.*|#!%{_bindir}/python|g' "{}" ";"
 
+sh makei18n.sh
+
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_mandir}/man1
 
-python ./setup.py install --optimize=2 --root=$RPM_BUILD_ROOT
+python ./setup.py install \
+	--optimize=2 \
+	--root=$RPM_BUILD_ROOT
+
 find $RPM_BUILD_ROOT%{py_sitescriptdir} -type f -name "*.py" | xargs rm
 install debian/* $RPM_BUILD_ROOT%{_mandir}/man1
+
+rm -rf locale/{in,nn_NO,piglatin}
+find locale -type f ! -name '*.mo' -exec rm "{}" ";"
+cp -a locale/*  $RPM_BUILD_ROOT%{_datadir}/locale
 
 %find_lang bittorrent
 
@@ -86,6 +97,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/maketorrent-console
 %attr(755,root,root) %{_bindir}/torrentinfo-console
 %{py_sitescriptdir}/BitTorrent
+%{py_sitescriptdir}/Zeroconf.py[co]
 %{py_sitescriptdir}/khashmir
 %{_mandir}/man1/*
 
