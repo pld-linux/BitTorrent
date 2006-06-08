@@ -17,6 +17,7 @@ BuildRequires:	sed >= 4.0
 Requires:	python-Crypto
 Requires:	python-TwistedCore
 Requires:	python-TwistedWeb
+Requires:	python-wxPython
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
