@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=BitTorrent Client
+Name[pl]=Klient BitTorrent
+Comment=A tool to distribute files
+Comment[pl]=Narzędzie do rozpowszechniania plików
+Exec=bittorrent
+Icon=bittorrent
+Terminal=false
+Type=Application
+StartupNotify=false
+Categories=GNOME;GTK;Network;
+MimeType=application/x-bittorrent;
