@@ -2,11 +2,12 @@ Summary:	BitTorrent - a tool for distributing files
 Summary(pl):	BitTorrent - narzêdzie do rozpowszechniania plików
 Name:		BitTorrent
 Version:	4.20.4
-Release:	1
+Release:	2
 License:	BitTorrent Open Source License
 Group:		Applications/Communications
 Source0:	http://www.bittorrent.com/dl/%{name}-%{version}.tar.gz
 # Source0-md5:	6616f6ae8a8460804ce43b3cf4b6f73b
+Source1:	%{name}.desktop
 Patch0:		%{name}-man_pages.patch
 Patch1:		%{name}-morei18n.patch
 URL:		http://www.bittorrent.com/
@@ -68,7 +69,7 @@ sh makei18n.sh
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_mandir}/man1
+install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_mandir}/man1}
 
 python ./setup.py install \
 	--optimize=2 \
@@ -81,10 +82,19 @@ rm -rf locale/{in,nn_NO,piglatin}
 find locale -type f ! -name '*.mo' -exec rm "{}" ";"
 cp -a locale/*  $RPM_BUILD_ROOT%{_datadir}/locale
 
+cp $RPM_BUILD_ROOT%{_pixmapsdir}/BitTorrent-%{version}/logo/bittorrent_icon.png $RPM_BUILD_ROOT%{_pixmapsdir}/bittorrent.png
+cp %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
+
 %find_lang bittorrent
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post gui
+%update_desktop_database_post
+
+%postun gui
+%update_desktop_database_postun
 
 %files -f bittorrent.lang
 %defattr(644,root,root,755)
@@ -107,3 +117,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/bittorrent
 %attr(755,root,root) %{_bindir}/maketorrent
 %{_pixmapsdir}/BitTorrent-%{version}
+%{_pixmapsdir}/bittorrent.png
+%{_desktopdir}/%{name}.desktop
