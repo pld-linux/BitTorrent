@@ -44,6 +44,7 @@ Summary:	Graficzny interfejs u¿ytkownika dla BitTorrenta
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 Requires:	python-pygtk-gtk >= 2.4.0
+Requires:	python-wxPython
 
 %description gui
 GUI for BitTorrent.
