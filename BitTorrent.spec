@@ -43,7 +43,6 @@ Summary:	GUI for BitTorrent
 Summary:	Graficzny interfejs u¿ytkownika dla BitTorrenta
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
-Requires:	python-pygtk-gtk >= 2.4.0
 Requires:	python-wxPython
 
 %description gui
@@ -106,7 +105,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/launchmany-curses
 %attr(755,root,root) %{_bindir}/maketorrent-console
 %attr(755,root,root) %{_bindir}/torrentinfo-console
-%{py_sitescriptdir}/BitTorrent
+%dir %{py_sitescriptdir}/BitTorrent
+%{py_sitescriptdir}/BitTorrent/*.py[co]
 %{py_sitescriptdir}/Zeroconf.py[co]
 %{py_sitescriptdir}/khashmir
 %{_mandir}/man1/*
@@ -115,6 +115,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/bittorrent
 %attr(755,root,root) %{_bindir}/maketorrent
+%{py_sitescriptdir}/BitTorrent/GUI_wx
 %{_pixmapsdir}/BitTorrent-%{version}
 %{_pixmapsdir}/bittorrent.png
 %{_desktopdir}/%{name}.desktop
