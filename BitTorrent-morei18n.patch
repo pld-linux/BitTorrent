@@ -1,9 +1,20 @@
---- BitTorrent-4.1.7/makei18n.sh.orig	2005-11-04 12:51:16.000000000 +0100
-+++ BitTorrent-4.1.7/makei18n.sh	2005-11-04 12:51:16.000000000 +0100
-@@ -1,5 +1,5 @@
+--- BitTorrent-4.20.9/makei18n.sh.orig	2006-08-17 03:42:20.000000000 +0100
++++ BitTorrent-4.20.9/makei18n.sh	2006-09-05 20:58:06.000000000 +0100
+@@ -12,7 +12,7 @@
+ 
+ # written by Matt Chisholm
  APP_NAME="bittorrent"
 -LANGUAGES=`python language_codes.py -a`
 +LANGUAGES=`cd po; ls *.po | sed -e 's/\.po//'`
  MESSAGES_PO="messages.pot"
  
  rm -f $APP_NAME.lis
+@@ -29,7 +29,7 @@
+ # find everything else
+ find . -name \*.py -type f | egrep -v '/(build)|(dist)|(test)/' >> $APP_NAME.lis
+ 
+-xgettext -f $APP_NAME.lis -L Python -o -                        |\
++pygettext -o - $(cat $APP_NAME.lis)                             |\
+     sed -e 's/CHARSET/UTF-8/'                                   |\
+     sed -e 's/SOME DESCRIPTIVE TITLE./BitTorrent/'              |\
+     sed -e 's/YEAR/2006/'                                       |\
