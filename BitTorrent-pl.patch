@@ -1,0 +1,72 @@
+--- BitTorrent-5.0.0/po/pl.po~	2006-11-05 03:39:05.000000000 +0100
++++ BitTorrent-5.0.0/po/pl.po	2006-11-05 18:23:11.311332000 +0100
+@@ -683,7 +683,7 @@
+ 
+ #: BitTorrent/GUI_wx/DownloadManager.py:2718
+ msgid "&Add torrent file\tCtrl+O"
+-msgstr "Dod&aj plik torrent\\tCtrl+O"
++msgstr "Dod&aj plik torrent\tCtrl+O"
+ 
+ #: BitTorrent/GUI_wx/DownloadManager.py:2725
+ msgid "Add"
+@@ -695,7 +695,7 @@
+ 
+ #: BitTorrent/GUI_wx/DownloadManager.py:2731
+ msgid "Torrent info\tCtrl+I"
+-msgstr "Informacje o torrencie\\tCtrl+I"
++msgstr "Informacje o torrencie\tCtrl+I"
+ 
+ #: BitTorrent/GUI_wx/DownloadManager.py:2736
+ msgid "Pause"
+@@ -739,15 +739,15 @@
+ 
+ #: BitTorrent/GUI_wx/DownloadManager.py:2786
+ msgid "Add torrent &URL\tCtrl+U"
+-msgstr "Dodaj &URL torrenta\\tCtrl+U"
++msgstr "Dodaj &URL torrenta\tCtrl+U"
+ 
+ #: BitTorrent/GUI_wx/DownloadManager.py:2789
+ msgid "Make &new torrent\tCtrl+N"
+-msgstr "Utwórz &nowy torrent\\tCtrl+N"
++msgstr "Utwórz &nowy torrent\tCtrl+N"
+ 
+ #: BitTorrent/GUI_wx/DownloadManager.py:2798
+ msgid "&Quit\tCtrl+Q"
+-msgstr "&Zakończ\\tCtrl+Q"
++msgstr "&Zakończ\tCtrl+Q"
+ 
+ #: BitTorrent/GUI_wx/DownloadManager.py:2800
+ msgid "E&xit"
+@@ -759,19 +759,19 @@
+ 
+ #: BitTorrent/GUI_wx/DownloadManager.py:2807
+ msgid "&Settings\tCtrl+S"
+-msgstr "U&stawienia\\tCtrl+S"
++msgstr "U&stawienia\tCtrl+S"
+ 
+ #: BitTorrent/GUI_wx/DownloadManager.py:2811
+ msgid "&Log\tCtrl+L"
+-msgstr "&Dziennik\\tCtrl+L"
++msgstr "&Dziennik\tCtrl+L"
+ 
+ #: BitTorrent/GUI_wx/DownloadManager.py:2815
+ msgid "&Console\tCtrl+C"
+-msgstr "&Konsola\\tCtrl+C"
++msgstr "&Konsola\tCtrl+C"
+ 
+ #: BitTorrent/GUI_wx/DownloadManager.py:2818
+ msgid "&Details\tCtrl+D"
+-msgstr "&Szczegóły\\tCtrl+D"
++msgstr "&Szczegóły\tCtrl+D"
+ 
+ #: BitTorrent/GUI_wx/DownloadManager.py:2822
+ msgid "&View"
+@@ -783,7 +783,7 @@
+ 
+ #: BitTorrent/GUI_wx/DownloadManager.py:2833
+ msgid "&About\tCtrl+B"
+-msgstr "&Informacje o\\tCtrl+B"
++msgstr "&Informacje o\tCtrl+B"
+ 
+ #: BitTorrent/GUI_wx/DownloadManager.py:2835
+ msgid "FA&Q"
