@@ -10,6 +10,7 @@ Source0:	http://download.bittorrent.com/dl/%{name}-%{version}.tar.gz
 Source1:	%{name}.desktop
 Patch0:		%{name}-man_pages.patch
 Patch1:		%{name}-morei18n.patch
+Patch2:		%{name}-pl.patch
 URL:		http://www.bittorrent.com/
 BuildRequires:	python-devel
 BuildRequires:	python-devel-tools
@@ -58,6 +59,7 @@ Graficzny interfejs u¿ytkownika dla BitTorrenta.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 mv -f po/nb{_NO,}.po
 rm -rf locale
