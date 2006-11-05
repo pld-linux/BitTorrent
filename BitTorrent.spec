@@ -13,6 +13,7 @@ Patch1:		%{name}-morei18n.patch
 URL:		http://www.bittorrent.com/
 BuildRequires:	python-devel
 BuildRequires:	python-devel-tools
+BuildRequires:	python-TwistedCore
 BuildRequires:	rpm-pythonprov
 BuildRequires:	sed >= 4.0
 %pyrequires_eq	python-modules
