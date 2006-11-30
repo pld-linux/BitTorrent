@@ -1,12 +1,12 @@
 Summary:	BitTorrent - a tool for distributing files
 Summary(pl):	BitTorrent - narzêdzie do rozpowszechniania plików
 Name:		BitTorrent
-Version:	5.0.0
+Version:	5.0.1
 Release:	1
 License:	BitTorrent Open Source License
 Group:		Applications/Communications
 Source0:	http://download.bittorrent.com/dl/%{name}-%{version}.tar.gz
-# Source0-md5:	3229330468c1e75301aff8c52c4adf06
+# Source0-md5:	8841d614f7dc8928b51015dc81ac1a28
 Source1:	%{name}.desktop
 Patch0:		%{name}-man_pages.patch
 Patch1:		%{name}-morei18n.patch
@@ -85,7 +85,7 @@ rm -rf locale/{in,nn_NO,piglatin}
 find locale -type f ! -name '*.mo' -exec rm "{}" ";"
 cp -a locale/*  $RPM_BUILD_ROOT%{_datadir}/locale
 
-cp $RPM_BUILD_ROOT%{_pixmapsdir}/BitTorrent-%{version}/logo/bittorrent_icon.png $RPM_BUILD_ROOT%{_pixmapsdir}/bittorrent.png
+cp $RPM_BUILD_ROOT%{_pixmapsdir}/*-%{version}/logo/bittorrent_icon.png $RPM_BUILD_ROOT%{_pixmapsdir}/bittorrent.png
 cp %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 
 %find_lang bittorrent
@@ -122,6 +122,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/bittorrent
 %attr(755,root,root) %{_bindir}/maketorrent
 %{py_sitescriptdir}/BitTorrent/GUI_wx
-%{_pixmapsdir}/BitTorrent-%{version}
+%{_pixmapsdir}/*-%{version}
 %{_pixmapsdir}/bittorrent.png
 %{_desktopdir}/%{name}.desktop
