@@ -44,7 +44,7 @@ mo¿liwo¶ci ¶ci±gania.
 
 %package gui
 Summary:	GUI for BitTorrent
-Summary:	Graficzny interfejs u¿ytkownika dla BitTorrenta
+Summary(pl):	Graficzny interfejs u¿ytkownika dla BitTorrenta
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 Requires:	python-wxPython
