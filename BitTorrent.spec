@@ -1,5 +1,5 @@
 Summary:	BitTorrent - a tool for distributing files
-Summary(pl.UTF-8):   BitTorrent - narzędzie do rozpowszechniania plików
+Summary(pl.UTF-8):	BitTorrent - narzędzie do rozpowszechniania plików
 Name:		BitTorrent
 Version:	5.0.5
 Release:	1
@@ -44,7 +44,7 @@ możliwości ściągania.
 
 %package gui
 Summary:	GUI for BitTorrent
-Summary(pl.UTF-8):   Graficzny interfejs użytkownika dla BitTorrenta
+Summary(pl.UTF-8):	Graficzny interfejs użytkownika dla BitTorrenta
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 Requires:	python-wxPython
