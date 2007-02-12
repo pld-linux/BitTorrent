@@ -1,5 +1,5 @@
 Summary:	BitTorrent - a tool for distributing files
-Summary(pl):	BitTorrent - narzêdzie do rozpowszechniania plików
+Summary(pl.UTF-8):   BitTorrent - narzÄ™dzie do rozpowszechniania plikÃ³w
 Name:		BitTorrent
 Version:	5.0.5
 Release:	1
@@ -33,18 +33,18 @@ Even with many simultaneous downloads, the upload burden on the
 central server remains quite small, since each new downloader
 introduces new upload capacity.
 
-%description -l pl
-BitTorrent to narzêdzie do rozpowszechniania plików. Jest bardzo ³atwe
-w u¿yciu - ¶ci±ganie rozpoczyna siê przez klikanie na hiper³±cza.
-Je¶li wiêcej ni¿ jedna osoba ¶ci±ga dany plik, wysy³aj± czê¶ci pliku
-miêdzy sob±, ³agodz±c obci±¿enie ³±cza centralnego serwera. Nawet przy
-wielu jednoczesnych po³±czeniach wykorzystanie ³±cza g³ównego serwera
-pozostaje do¶æ ma³e, poniewa¿ ka¿dy nowy ¶ci±gaj±cy daje nowe
-mo¿liwo¶ci ¶ci±gania.
+%description -l pl.UTF-8
+BitTorrent to narzÄ™dzie do rozpowszechniania plikÃ³w. Jest bardzo Å‚atwe
+w uÅ¼yciu - Å›ciÄ…ganie rozpoczyna siÄ™ przez klikanie na hiperÅ‚Ä…cza.
+JeÅ›li wiÄ™cej niÅ¼ jedna osoba Å›ciÄ…ga dany plik, wysyÅ‚ajÄ… czÄ™Å›ci pliku
+miÄ™dzy sobÄ…, Å‚agodzÄ…c obciÄ…Å¼enie Å‚Ä…cza centralnego serwera. Nawet przy
+wielu jednoczesnych poÅ‚Ä…czeniach wykorzystanie Å‚Ä…cza gÅ‚Ã³wnego serwera
+pozostaje doÅ›Ä‡ maÅ‚e, poniewaÅ¼ kaÅ¼dy nowy Å›ciÄ…gajÄ…cy daje nowe
+moÅ¼liwoÅ›ci Å›ciÄ…gania.
 
 %package gui
 Summary:	GUI for BitTorrent
-Summary(pl):	Graficzny interfejs u¿ytkownika dla BitTorrenta
+Summary(pl.UTF-8):   Graficzny interfejs uÅ¼ytkownika dla BitTorrenta
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 Requires:	python-wxPython
@@ -52,8 +52,8 @@ Requires:	python-wxPython
 %description gui
 GUI for BitTorrent.
 
-%description gui -l pl
-Graficzny interfejs u¿ytkownika dla BitTorrenta.
+%description gui -l pl.UTF-8
+Graficzny interfejs uÅ¼ytkownika dla BitTorrenta.
 
 %prep
 %setup -q
