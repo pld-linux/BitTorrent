@@ -88,7 +88,7 @@ cp -a locale/*  $RPM_BUILD_ROOT%{_datadir}/locale
 cp $RPM_BUILD_ROOT%{_pixmapsdir}/*-%{version}/logo/bittorrent_icon.png $RPM_BUILD_ROOT%{_pixmapsdir}/bittorrent.png
 cp %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 
-%find_lang bittorrent
+#%find_lang bittorrent
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -99,7 +99,8 @@ rm -rf $RPM_BUILD_ROOT
 %postun gui
 %update_desktop_database_postun
 
-%files -f bittorrent.lang
+#%files -f bittorrent.lang
+%files
 %defattr(644,root,root,755)
 %doc LICENSE.txt README.txt credits.txt 
 %attr(755,root,root) %{_bindir}/bittorrent-console
