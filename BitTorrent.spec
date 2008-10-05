@@ -1,17 +1,19 @@
 Summary:	BitTorrent - a tool for distributing files
 Summary(pl.UTF-8):	BitTorrent - narzędzie do rozpowszechniania plików
 Name:		BitTorrent
-Version:	5.0.8
-Release:	3
+Version:	5.0.9
+Release:	1
 License:	BitTorrent Open Source License
 Group:		Applications/Communications
 Source0:	http://download.bittorrent.com/dl/%{name}-%{version}.tar.gz
-# Source0-md5:	43935e080fade4726fa07bb2565f5f48
+# Source0-md5:	89ab9d21d956eb80766af102a7edc03e
 Source1:	%{name}.desktop
 Patch0:		%{name}-man_pages.patch
 Patch1:		%{name}-morei18n.patch
 Patch2:		%{name}-pl.patch
+Patch3:		%{name}-xgettext.patch
 URL:		http://www.bittorrent.com/
+BuildRequires:	gettext-devel
 BuildRequires:	python-devel
 BuildRequires:	python-devel-tools
 BuildRequires:	python-TwistedCore
@@ -61,6 +63,7 @@ Graficzny interfejs użytkownika dla BitTorrenta.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 mv -f po/nb{_NO,}.po
 rm -rf locale
@@ -116,6 +119,7 @@ rm -rf $RPM_BUILD_ROOT
 %{py_sitescriptdir}/Zeroconf.py[co]
 %{py_sitescriptdir}/khashmir
 %{py_sitescriptdir}/BTL
+%{py_sitescriptdir}/*.egg-info
 %{_mandir}/man1/*
 
 %files gui
