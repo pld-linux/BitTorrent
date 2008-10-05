@@ -1,12 +1,12 @@
 Summary:	BitTorrent - a tool for distributing files
 Summary(pl.UTF-8):	BitTorrent - narzędzie do rozpowszechniania plików
 Name:		BitTorrent
-Version:	5.0.9
+Version:	5.2.0
 Release:	1
 License:	BitTorrent Open Source License
 Group:		Applications/Communications
 Source0:	http://download.bittorrent.com/dl/%{name}-%{version}.tar.gz
-# Source0-md5:	89ab9d21d956eb80766af102a7edc03e
+# Source0-md5:	b35d1de939b0768fd5c62978326864eb
 Source1:	%{name}.desktop
 Patch0:		%{name}-man_pages.patch
 Patch1:		%{name}-morei18n.patch
