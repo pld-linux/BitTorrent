@@ -1,0 +1,13 @@
+--- BitTorrent-5.0.9/makei18n.sh.wiget	2008-10-05 18:15:31.000000000 +0200
++++ BitTorrent-5.0.9/makei18n.sh	2008-10-05 18:28:56.000000000 +0200
+@@ -28,8 +28,9 @@ ls BitTorrent/defaultargs.py    >> $APP_
+ ls *py                          >> $APP_NAME.lis
+ # find everything else
+ find . -name \*.py -type f | egrep -v '/(build)|(dist)|(test)/' >> $APP_NAME.lis
++sed -i -e 's=./BitTorrent/Upload.py==;s=./khashmir/khash.py==' $APP_NAME.lis
+ 
+-pygettext -o - $(cat $APP_NAME.lis)                             |\
++xgettext -o - $(cat $APP_NAME.lis)                              |\
+     sed -e 's/CHARSET/UTF-8/'                                   |\
+     sed -e 's/SOME DESCRIPTIVE TITLE./BitTorrent/'              |\
+     sed -e 's/YEAR/2006/'                                       |\
