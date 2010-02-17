@@ -14,9 +14,8 @@ Patch2:		%{name}-pl.patch
 Patch3:		%{name}-xgettext.patch
 URL:		http://www.bittorrent.com/
 BuildRequires:	gettext-devel
-BuildRequires:	python-devel
-BuildRequires:	python-devel-tools
 BuildRequires:	python-TwistedCore
+BuildRequires:	python-devel
 BuildRequires:	rpm-pythonprov
 BuildRequires:	sed >= 4.0
 %pyrequires_eq	python-modules
@@ -109,7 +108,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f bittorrent.lang
 %defattr(644,root,root,755)
-%doc LICENSE.txt README.txt credits.txt 
+%doc LICENSE.txt README.txt credits.txt
 %attr(755,root,root) %{_bindir}/bittorrent-console
 %attr(755,root,root) %{_bindir}/bittorrent-curses
 %attr(755,root,root) %{_bindir}/bittorrent-tracker
