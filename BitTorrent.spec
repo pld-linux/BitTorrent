@@ -2,7 +2,7 @@ Summary:	BitTorrent - a tool for distributing files
 Summary(pl.UTF-8):	BitTorrent - narzędzie do rozpowszechniania plików
 Name:		BitTorrent
 Version:	5.2.2
-Release:	2
+Release:	3
 License:	BitTorrent Open Source License
 Group:		Applications/Communications
 Source0:	http://download.bittorrent.com/dl/%{name}-%{version}.tar.gz
@@ -66,8 +66,12 @@ Graficzny interfejs użytkownika dla BitTorrenta.
 %patch3 -p1
 
 mv -f po/nb{_NO,}.po
+mv -f po/nn{_NO,}.po
+mv -f po/{in,id}.po
 rm -rf locale
 sed -i -e "s/'nb_NO'/'nb'/" BTL/language.py
+sed -i -e "s/'nn_NO'/'nn'/" BTL/language.py
+sed -i -e "s/'in'/'id'/" BTL/language.py
 
 %build
 find -type f -exec sed -i -e 's|#!.*python.*|#!%{_bindir}/python|g' "{}" ";"
@@ -85,7 +89,7 @@ python ./setup.py install \
 find $RPM_BUILD_ROOT%{py_sitescriptdir} -type f -name "*.py" | xargs rm
 install debian/* $RPM_BUILD_ROOT%{_mandir}/man1
 
-rm -rf locale/{in,nn_NO,piglatin}
+rm -rf locale/piglatin
 find locale -type f ! -name '*.mo' -exec rm "{}" ";"
 cp -a locale/*  $RPM_BUILD_ROOT%{_datadir}/locale
 
