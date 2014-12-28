@@ -13,7 +13,7 @@ Patch1:		%{name}-morei18n.patch
 Patch2:		%{name}-pl.patch
 Patch3:		%{name}-xgettext.patch
 URL:		http://www.bittorrent.com/
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	python-TwistedCore
 BuildRequires:	python-devel
 BuildRequires:	rpm-pythonprov
